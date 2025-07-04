@@ -8,12 +8,13 @@ We present the Code Documentation and Analysis Tool (CoDAT). CoDAT is a tool des
 
 # Table of Contents 
 
-1. [Overview](#overview)
+1. [Publications](#publications)
 2. [Vulnerabilities Discovered](#discoveries)
 
-# Overview
+# Publications
 
-PLACEHOLDER
+1. [Bypassing Array Canaries via Autonomous Function Call Resolution](https://arxiv.org/abs/2501.13256)
+2. [Code Documentation and Analysis to Secure Software Development](https://arxiv.org/abs/2407.11934)
 
 # Discoveries
 
