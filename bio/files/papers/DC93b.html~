@@ -1,0 +1,34 @@
+<html><head><title>Convergence of Iteration Systems</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Convergence of Iteration Systems</h2>
+<hr>
+<p>
+<i>A. Arora, 
+<a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>, M. Evangelist, and M. Gouda
+</i>
+</p><p>
+An iteration system is a set of assignment statements whose
+computation proceeds in steps: at each step, an arbitrary subset of
+the statements is executed in parallel. The set of statements thus
+executed may differ at each step; however, it is required that each
+statement is executed infinitely often along the computation. The
+convergence of such systems (to a fixed point) is typically verified
+by showing that the value of a given variant function is decreased by
+each step that causes a state change. Such a proof requires an
+exponential number of cases (in the number of assignment statements)
+to be considered. In this paper, we present alternative methods for
+verifying the convergence of iteration systems. In most of these
+methods, upto a linear number of cases need to be considered.
+</p><p>
+<a href=" http://www.springerlink.com/content/1432-0452/">
+Distributed Computing</a> 7:43-53, 1993.
+A preliminary version appeared in the 
+<i>Proceedings of 
+CONCUR'90, Springer LNCS vol. 458</i>
+</p><p>
+</p><hr>
+<a href="DC94.ps">PostScript</a> /
+<a href="DC94.pdf">PDF</a>
+© 1990, 1994 <a href="http://www.springer.com/">Springer</a>,
+</body></html>

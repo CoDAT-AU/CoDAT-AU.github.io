@@ -1,0 +1,148 @@
+<HTML>
+<HEAD> <TITLE>Research since 2007</TITLE> </HEAD>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="000000"> 
+<! ---alternative link colors--- LINK="#215E21" VLINK="A62A2A">
+
+
+<P>
+<H1 ALIGN=CENTER>Research since 2007</H1>
+
+
+I have recently been involved in the following projects.
+
+
+<P><LI><B>Semantics of concurrency</B></br>
+
+I construct effective semantic models for aspects of concurrency
+such as failure and dynamic process creation/destruction. I apply these models to (1)
+investigate issues such as: how does the failure of a subsystem affect the overall system?
+what are the limits on recovery from failures that remain undetected? and to (2) devise
+meta-theorems for reasoning about concurrent systems, e.g., compositionality results for
+dynamic systems. This has recently produced the following results.
+
+<UL> 
+
+<P><LI><B>The Impossibility of Boosting Distributed Service Resilience</B><br>
+
+We show that fault-tolerance cannot be boosted in an asynchronous
+system. More precisely, we show that no distributed system in which
+processes coordinate using <i>f</i>-resilient atomic objects and reliable
+registers can solve the consensus problem in the presence of <i>f+1</i>
+undetectable process stopping failures. We also provide results for non-atomic and failure-aware objects.
+This result appeared in 
+<a href="http://www.sciencedirect.com/science/journal/08905401/209/6">
+Information and Computation 209(6):927-950, June 2011.</A></br>
+
+
+<P><LI><B>Dynamic input-output automata (DIOA)</B></br>
+
+A dynamic system is one in which processes are created and destroyed
+at run time, and also change their location. This work defined the
+first mathematical formalism for dynamic systems which did not employ
+the process-algebraic approach. This brought some variety to the
+subfield of dynamic systems, as well as new techniques, e.g., the use
+of trace inclusion rather than simulation-based equivalences. A
+submission to the journal Information and Computation is currently
+under review.
+
+</UL>
+
+
+<P><LI><B>Methods for effective reasoning about software behavior</B></br>
+
+I devise methods to verify, with minimum manual (human) and
+computational cost, that large software systems are deadlock-free,
+safe, and responsive to their environments (live). 
+Recent result from
+this line of work are the following.
+
+<UL>
+
+
+<P><LI>A sufficient, efficiently-checkable
+condition for deadlock-freedom of concurrent programs expressed in 
+<A HREF = "http://www-verimag.imag.fr/Rigorous-Design-of-Component-Based.html?lang=en">BIP</A>,
+which uses multiparty-interactions for interprocess synchronization and
+communication. This result appears in the paper 
+<A HREF="papers/forte13.html">An Abstract Framework for Deadlock Prevention in BIP</A>,
+published in 
+<A HREF="http://forte13.sosy-lab.org">FORTE 2013</A>.
+
+
+
+<P><LI>A method for refining liveness properties of distributed
+systems, and establishing the liveness properties at one layer of
+abstraction by using the liveness properties of lower laywers of
+abstraction as hypothesis. This work appears in 
+<a href="http://www.springerlink.com/content/10m01034n30p14xu/">
+Formal Methods in System Design 39(1):1-46, August 2011. </a></br>
+
+
+</UL>
+
+<P><LI><B>
+<A HREF="http://webfea.fea.aub.edu.lb/fadi/dkwk/doku.php?id=speccheck#spec_construct">
+Specification construction using behaviors, equivalences, and SMT solvers</A></B></br>
+
+Checking that a program behaves correctly requires a precise, unambiguous specification
+of the required behavior, written in a formal, mathematical, notation. Writing formal
+specifications that accurately reflect the informal intentions of the user is inherently dif-
+ficult, because it requires the creation of a precise artifact from vague intentions.
+This work presents a method for the construction of such formal specifications, for trans-
+formational, terminating, sequential programs. The method automatically constructs a
+specification, using the results from a finite number of queries to the user, which the user
+answers interactively. These queries enable the user to formalize and make precise their
+vague ideas of the required program behavior.
+
+
+<P><LI><B>Pairwise refactoring: a design pattern for distributed programs</B></br>
+
+This work proposes a design pattern for distributed software systems
+in which the code that controls the interaction between each pair of
+components is separated and factored out from the remainder of the
+system. This allows the code to be analyzed in isolation (for each
+pair), thereby avoiding the combinatorial explosion of cases arising
+from state-explosion. It provides an alternative to assume-guarantee
+reasoning. Some aspects of this work have been implemented in the
+<A HREF= "PairwiseRef/index.html"> 
+M.Sc. theses of Rasha Abdallah and Emile Shartouny</A>).
+
+<!--
+We have shown that restricting a shared-memory concurrent program to this pairwise form does not sacrtifice expressiveness.
+-->
+
+
+<P><LI><B>Model repair via SAT solving</B></br>
+
+This work presents an algorithm which takes a Kripke structure <i>M</i> and
+temporal logic formula <i>f</i>, and modifies  <i>M</i>, by removing “violating”
+transitions, so that  <i>M</i> satisfies <i>f</i>. The algorithm has been implemented
+as the tool Eshmun, and has been applied
+successfully to many examples, including mutual exclusion, dining pholosophers, barrier-synchronization, automated teller machine. 
+Kripke structures can serve as finite-state models for non-terminating
+reactive programs, and so this work has application in the
+specification and modeling of reactive systems.
+The Eshmun tool and a technical report describing this work can be downloaded
+<A HREF="http://eshmuntool.blogspot.com">here</A>.
+A user manual for Eshmun is available <A HREF="Eshmun/usermanual/index.html">here</A>.
+
+
+<P> In addition, during 2007 - 2013, I wrote an extensive set of 
+<A HREF="softwareEngNotes.pdf"><B>Software Engineering Lecture Notes</A>
+
+
+
+</UL> 
+
+
+
+</BODY>
+
+
+
+
+
+
+
+</HTML>

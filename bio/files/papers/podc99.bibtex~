@@ -1,0 +1,9 @@
+@inproceedings{DBLP:conf/podc/Attie99,
+  author    = {Paul C. Attie},
+  title     = {Liveness-Preserving Simulation Relations.},
+  booktitle = {PODC},
+  year      = {1999},
+  pages     = {63-72},
+  ee        = {http://doi.acm.org/10.1145/301308.301328},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}

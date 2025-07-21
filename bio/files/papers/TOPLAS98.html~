@@ -1,0 +1,40 @@
+<html><head><title>Synthesis of concurrent systems with many similar processes</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Synthesis of concurrent systems with many similar processes</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>
+</i>
+</p><p>
+Methods for synthesizing concurrent programs from temporal logic
+specifications based on the use of a decision procedure for testing
+temporal satisfiability have been proposed by Emerson and Clarke and
+by Manna and Wolper.  An important advantage of these synthesis
+methods is that they obviate the need to manually compose a program
+and manually construct a proof of its correctness. One only has to
+formulate a precise problem specification; the synthesis method then
+mechanically constructs a correct solution. A serious drawback of
+these methods in practice, however, is that they suffer from the state
+explosion problem.  To synthesize a concurrent system consisting of
+$K$ sequential processes, each having $N$ states in its local
+transition diagram, requires construction of the global
+product-machine having at least $N^K$ global states in general.  This
+exponential growth in $K$ makes it infeasible to synthesize systems
+composed of more than 2 or 3 processes.  In this article, we show how
+to synthesize concurrent systems consisting of many (i.e., a finite
+but arbitrarily large number $K$ of) similar sequential processes. Our
+approach avoids construction of the global product-machine for $K$
+processes; instead, it constructs a two-process product-machine for a
+single pair of generic sequential processes. The method is uniform in
+$K$, providing a simple template that can be instantiated for each
+process to yield a solution for any fixed $K$.  The method is also
+illustrated on synchronization problems from the literature.
+</p><p>
+<i> ACM Transactions on Programming Languages and Systems </i> 20(1): 51-115, 1998.
+</p><p>
+</p><hr>
+<a href="TOPLAS98.ps">PostScript</a> /
+<a href="TOPLAS98.pdf">PDF</a>
+© 1998 <a href="http://www.acm.org/">ACM</a>.<br>
+</body></html>

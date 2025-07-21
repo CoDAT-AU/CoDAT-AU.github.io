@@ -1,0 +1,45 @@
+<html><head><title>Henzinger/Qadeer/Rajamani/Tasiran: An Assume-Guarantee Rule for Checking Simulation</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>An Assume-Guarantee Rule for Checking Simulation</h2>
+<hr>
+<p>
+<i><a href="http://mtc.epfl.ch/%7Etah">
+Thomas A. Henzinger</a>, Shaz Qadeer, Sriram K. Rajamani, and 
+Serdar Tasiran</i>
+</p><p>
+The simulation preorder on state transition systems is widely accepted
+as a useful notion of refinement, both in its own right and as an
+efficiently checkable sufficient condition for trace containment.  For
+composite systems, due to the exponential explosion of the state
+space, there is a need for decomposing a simulation check of the form
+<i>P &lt; Q</i>, denoting "<i>P</i> is simulated by <i>Q</i>," into
+simpler simulation checks on the components of <i>P</i> and <i>Q</i>.
+We present an assume-guarantee rule that enables such a decomposition.
+To the best of our knowledge, this is the first assume-guarantee rule
+that applies to a refinement relation different from trace
+containment.  Our rule is circular, and its soundness proof requires
+induction on trace trees.  The proof is constructive: given simulation
+relations that witness the simulation preorder between corresponding
+components of <i>P</i> and <i>Q</i>, we provide a procedure for
+constructing a witness relation for <i>P &lt; Q</i>.  We also extend our
+assume-guarantee rule to account for fairness constraints on
+transition systems.
+</p><p>
+<i>ACM Transactions on Programming Languages and Systems</i> 24:51-64, 2002.
+A preliminary version appeared in the 
+<i>Proceedings of the 
+Second International Conference on Formal Methods in Computer-Aided Design</i>
+(FMCAD),
+Lecture Notes in Computer Science 1522,
+Springer, 1998, pp. 421-432.
+</p><p>
+</p><hr>
+<a href="http://mtc.epfl.ch/%7Etah/Publications/an_assume-guarantee_rule_for_checking_simulation.ps">
+PostScript</a> /
+<a href="http://mtc.epfl.ch/%7Etah/Publications/an_assume-guarantee_rule_for_checking_simulation.pdf">
+PDF</a> updated, improved, and extended text.
+© 1998 <a href="http://www.springer.com/">Springer</a>,
+2002 <a href="http://www.acm.org/">ACM</a>.<br>
+<img src="an_assume-guarantee_rule_for_checking_simulation_files/wwwcount" height="15" vspace="2">
+</body></html>

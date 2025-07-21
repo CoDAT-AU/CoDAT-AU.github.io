@@ -1,0 +1,46 @@
+<html><head><title>Model and Program Repair via SAT Solving</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Model and Program Repair via SAT Solving</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">Paul C. Attie</a>,
+Ali Cherri, Kinan Dak Al Bab, Mohamad Sakr, and Jad Saklawi<br>
+</i>
+</p><p>
+</p><p>
+We consider the following model repair problem: given a finite Kripke
+structure M and a CTL formula f, determine if M
+contains a substructure M' that satisfies f. That is, M can be
+``repaired'' to satisfy f by deleting some transitions.
+
+We map an instance (M,f) of model repair to a boolean formula
+repair(M,f) such that (M,f) has a solution iff
+repair(M,f) is satisfiable. Furthermore, a satisfying assignment
+determines which transitions must be removed from M to generate a
+model M' of f. Thus, we can use any SAT solver to repair
+Kripke structures. We also reduce satisfiability to model repair, 
+and hence show that model repair is NP-complete.
+
+We extend the basic repair method in several directions, as follows.
+(1) use abstraction: we repair a structure abstracted from M
+and then concretize the resulting repair to obtain a repair of M, and 
+(2) repair concurrent Kripke structures: we use the pairwise method of
+Attie and Emerson to represent and repair the behavior of a concurrent
+program, as a set of ``concurrent Kripke structures'', with only a
+quadratic increase in the size of the repair formula, and
+(3) repair hierarchical Kripke structures: we use a CTL
+formula to summarize the behavior of each ``box'', and CTL deduction
+to relate the box formula with the overall specification.
+
+<hr>
+
+
+<A HREF = "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7340481">Published vesion</A> / 
+<A HREF="papers/repair.MEMOCODE15.bibtex">Bibtex</A> 
+
+
+</body></html>
+
+
+

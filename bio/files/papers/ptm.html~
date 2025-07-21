@@ -1,0 +1,65 @@
+<html><head><title>Turing Machines, Transition Systems, and Interactionn</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Turing Machines, Transition Systems, and Interaction</h2>
+<hr>
+<p>
+<i>
+D. Goldin, S. Smolka, <a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie,</a>
+and E. Sondregger
+</i>
+</p><p> We present Persistent Turing Machines (PTMs), a new way of
+interpreting Turing- machine computation, one that is both interactive
+and persistent. A PTM is a nondeterministic 3-tape Turing machine that
+upon receiving an input token, com- putes for a while and then outputs
+the result, and this process is repeated forever.  It is persistent in
+the sense that the work-tape contents are maintained from one
+computation (macrostep) to the next.
+
+<p>
+We show that the class of PTMs is isomorphic to a very general class
+of ef- fective transition systems. One may therefore conclude that the
+extensions to the Turing-machine model embodied in PTMs are sufficient
+to make Turing machines expressively equivalent to transition systems.
+
+<p>
+We also define the persistent stream language (PSL) of a PTM and a
+correspond- ing notion of PSL-equivalence, and consider the infinite
+hierarchy of successively finer equivalences for PTMs over finite
+interaction-stream prefixes. We show that the limit of this hierarchy
+is strictly coarser than PSL-equivalence, a "gap" whose presence can
+be attributed to the fact that the transition systems corresponding to
+PTM computations naturally exhibit unbounded nondeterminism. We note
+that this gap is not present for decider PTMs, an important class of
+PTMs analogous to decider Turing machines.
+
+<p>
+We also consider the class of amnesic PTMs and a corresponding notion
+of equivalence based on amnesic stream languages (ASLs). It can be
+argued that amnesic stream languages are representative of the
+classical view of Turing-machine computation. We show that the class
+of ASLs is strictly contained in the class of PSLs.  Furthermore, the
+hierarchy of PTM equivalence relations collapses for the subclass of
+amnesic PTMs. These results indicate that, in a stream-based setting,
+the extension of the Turing-machine model with persistence is a
+nontrivial one.
+
+<p>
+The notion of a universal PTM is then introduced and a proof of its
+existence is presented. We also define the class of sequential
+interactive computation, illustrating it with several examples. In an
+analogous fashion to the Church-Turing Thesis, we hypothesize that
+anything intuitively computable by a sequential interactive
+computation can be computed by a persistent Turing machine.
+</p><p>
+<i>Information and Computation</i> 194 (2): 101-128, 2004.
+<B><A HREF=http://top25.sciencedirect.com/index.php?subject_area_id=7&journal_id=08905401>Most downloaded paper in the period Oct-Dec 2004</A></B>
+
+</p><p>
+</p><hr>
+
+<a href="ptm-preprint.ps">PostScript</a> /
+<a href="ptm-preprint.pdf">PDF</a> 
+© 2004 <a href="http://www.elsevier.com/wps/find/homepage.cws_home/">Elsevier</a>
+</body></html>
+

@@ -1,0 +1,15 @@
+@article{DBLP:journals/dse/AttieSESR96,
+  author    = {Paul C. Attie and
+               Munindar P. Singh and
+               E. Allen Emerson and
+               Amit P. Sheth and
+               Marek Rusinkiewicz},
+  title     = {Scheduling workflows by enforcing intertask dependencies.},
+  journal   = {Distributed Systems Engineering},
+  volume    = {3},
+  number    = {4},
+  year      = {1996},
+  pages     = {222-238},
+  ee        = {http://dx.doi.org/10.1088/0967-1846/3/4/003},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}

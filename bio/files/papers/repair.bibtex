@@ -1,0 +1,49 @@
+@article{ADS17,
+author = "Paul C. Attie, Kinan Dak Al Bab, and Mohamad Sakr",
+title = "Model and Program Repair via SAT Solving",
+journal = "ACM Transactions on Embedded Systems",
+volume = "17",
+number = "2",
+pages = "1 - 25",
+year = "2017",
+note = "",
+issn = "",
+doi = "",
+url = "",
+keywords = "Model checking",
+keywords = "State systems",
+keywords = "Model-driven software engineering"'
+keywords = "Correctness",
+abstract = "We consider the subtractive model repair problem: given a
+finite Kripke structure M and a CTL formula η, determine if M contains
+a substructure M′ that satisfies η. Thus, M can be “repaired” to
+satisfy η by deleting some transitions and states. We map an instance
+⟨M, η⟩ of model repair to a boolean formula repair (M , η) such that
+⟨M, η⟩ has a solution iff repair (M , η) is satisfiable. Furthermore,
+a satisfying assignment deter- mines which states and transitions must
+be removed from M to yield a model M′ of η. Thus, we can use any SAT
+solver to repair Kripke structures. Using a complete SAT solver yields
+a complete algorithm: it always finds a repair if one exists. We also
+show that CTL model repair is NP-complete. We extend the basic repair
+method in three directions: (1) the use of abstraction mappings, i.e.,
+repair a structure abstracted from M and then concretize the resulting
+repair to obtain a repair of M , (2) repair concurrent Kripke
+structures and concurrent programs: we use the pairwise method of
+Attie and Emerson to represent and repair the behav- ior of a
+concurrent program, as a set of “concurrent Kripke structures”, with
+only a quadratic increase in the size of the repair formula, and (3)
+repair hierarchical Kripke structures: we use a CTL formula to
+summarize the behavior of each “box”, and CTL deduction to relate the
+box formula with the overall specification."
+}
+
+
+
+
+
+
+
+
+
+
+

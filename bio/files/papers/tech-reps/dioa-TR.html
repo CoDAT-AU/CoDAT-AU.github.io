@@ -1,0 +1,77 @@
+<html><head><title>Dynamic Input/Output Automata: a Formal and Compositional Model for Dynamic Systems</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Dynamic Input/Output Automata: a Formal and Compositional Model for Dynamic Systems</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a> and 
+<a href="http://theory.lcs.mit.edu/~lynch/">N.A. Lynch</a>
+</i>
+</p><p>
+We present a compositional model of dynamic systems, based on I/O
+automata \cite{LT89}.  In our model, automata can be created and
+destroyed dynamically, as computation proceeds.  In addition, an
+automaton can dynamically change its signature, that is, the set of
+actions in which it can participate.  This allows us to model
+mobility, as discussed in \cite{AL01}, by enforcing the constraint
+that only automata at the same location may synchronize on common
+actions.
+
+
+<p>
+Our model features operators for \intr{parallel composition},
+\intr{action hiding}, and \intr{action renaming},
+and a notion of \intr{simulation} from one dynamic system to
+another, which can be used to prove that one system implements the
+other.
+Our model is hierarchical: a dynamically changing system of interacting
+automata is itself modeled as a single automaton that is ``one level
+higher.'' This can be repeated, so that an automaton that represents
+such a dynamic system can itself be created and destroyed. We can thus
+model the addition and removal of entire subsystems with a single
+action.
+
+<p>
+We establish fundamental compositionality results for DIOA: if one
+component is replaced by another whose traces are a subset of the
+former, then the set of traces of the system as a whole can only be
+reduced, and not increased, i.e., no new behaviors are added.  In other
+words, trace inclusion is monotonic with respect to parallel
+composition.  This permits the refinement of components and subsystems
+in isolation from the entire system.  We establish two such
+results. First we establish that trace inclusion is monotonic with
+respect to parallel composition in a ``static'' system in which no
+automaton is created or destroyed.  That is, if in
+$A_1 \pl \cdots \pl A'_j \pl \cdots \pl A_n$ we replace $A'_j$ by $A_j$, and
+the traces of $A_j$ are a subset of the traces of $A'_j$,
+then the traces of the resulting system are a subset of the traces of
+the original system.
+Our second result is that trace inclusion is monotonic with respect to
+automaton creation: if a system creates automaton $A_j$ instead of
+(previously) creating automaton $A'_j$, then its set of traces is
+possibly reduced, but not increased.
+We show that trace inclusion is monotonic with respect to automaton creation
+in a dynamic system only under certain
+conditions. Specifically, if automaton creation is not correlated with
+external behavior, then trace inclusion is not monotonic with respect
+to parallel composition.
+
+<p>
+Our trace inclusion results enable a design and refinement methodology
+based solely on the notion of externally visible behavior, and which
+is therefore independent of specific methods of establishing trace
+inclusion. This provides much more flexibility in refinement than a
+methodology which is, for example, based on the monotonicity of
+forward simulation with respect to parallel composition. In the latter
+every automaton must be refined using forward simulation, whereas in
+our framework different automata can be refined using
+different methods.
+</p><p>
+<i>Northeastern University</i>  2003.
+
+</p><p>
+</p><hr>
+<a href="dioa-TR.ps">PostScript</a> /
+<a href="dioa-TR.pdf">PDF</a>
+© Paul C. Attie
+</body></html>

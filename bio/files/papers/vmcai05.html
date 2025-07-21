@@ -1,0 +1,53 @@
+<html><head><title>Efficiently Verifiable Conditions for Deadlock-freedom of Large Concurrent Programs</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Efficiently Verifiable Conditions for Deadlock-freedom of Large Concurrent Programs</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">
+P.C. Attie</a> and H. Chockler
+</i>
+</p><p> We present two polynomial-time algorithms for automatic
+verification of deadlock-freedom of large finite-state concurrent
+programs.  We consider shared-memory concurrent programs in which a
+process can nondeterministically choose amongst several (enabled)
+actions at any step.  As shown by Ladkin and Simons, deadlock-freedom
+analysis is NP-hard even for concurrent programs of restricted form
+(no nondeterministic choice).  Therefore, research in this area
+concentrates either on the search for efficiently checkable sufficient
+conditions for deadlock-freedom, or on improving the complexity of the
+check in some special cases.  In this paper, we present two
+efficiently checkable sufficient conditions for deadlock freedom.
+
+Our algorithms apply to programs which are expressed in a particular
+syntactic form, in which variables are shared between pairs of
+processes.  The first algorithm improves the complexity of the
+deadlock check of 
+<A HREF="papers/TOPLAS04.html">Attie and Emerson [AE98]</A> 
+to polynomial in all
+parameters, as opposed to the exponential complexity of [AE98].
+The second algorithm involves a conceptually new construction of a
+``global wait-for graph'' for all processes. Its running time is also
+polynomial in all its parameters, and it is more discriminating than
+the first algorithm.  We illustrate our algorithms by applying them to
+several examples of concurrent programs that implement resource
+allocation and priority queues.  To the best of our knowledge, this is
+the first work that describes polynomially checkable conditions for
+assuring deadlock freedom of large concurrent programs.
+</p><p>
+<i>Proceedings of the 
+Sixth International Conference on
+Verification, Model Checking and Abstract Interpretation, 
+January 2005, Paris, France.
+</i>
+(VMCAI 2005), January 2005, Paris, France,
+Lecture Notes in Computer Science 3385,,
+Springer, 2005, pp. 465-481.
+</p><p>
+</p><hr>
+<a href="vmca05.ps">
+PostScript</a> /
+<a href="vmcai05.pdf">
+PDF</a> 
+© 2005 <a href="http://www.springer.com/">Springer</a>
+</body></html>

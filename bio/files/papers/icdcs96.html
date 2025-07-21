@@ -1,0 +1,39 @@
+<html><head><title>Optimal Deadlock Detection in Distributed Systems Based on Locally Constructed Wait-For Graphs</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Optimal Deadlock Detection in Distributed Systems Based on Locally Constructed Wait-For Graphs</h2>
+<hr>
+<p>
+<i>S. Chen, Y. Deng, <a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>, and W. Sun
+</i>
+</p><p>
+We present a new algorithm for detecting generalized deadlocks in
+distributed systems.  Our algorithm incrementally constructs and
+reduces a wait-for-graph (WFG) at an initiator process. This WFG is
+then searched for deadlock. The proposed algorithm has two primary
+advantages: First, it avoids sending messages along the edges of the
+global wait-for-graph, thereby achieving a worst-case message
+complexity of <i>2n</i>, where <i>n</i>  is the number of processes in
+the WFG. Since information must be obtained from every process
+reachable from the initiator, this is optimal to within a constant
+factor. All existing algorithms for deadlock detection construct a
+distributed snapshot of the WFG. As this involves sending messages
+along the edges of the WFG, the best available message complexity
+among these algorithms is <i>4e - 2n + 2l</i>, which is <i>O(n^2)</i>
+in the worst case, where <i>e</i> and <i>l</i> are the number of edges
+and leaves in the WFG, respectively. Second, since the information
+about a detected deadlock is readily available at the initiator
+process, rather than distributed among different processes, it
+significantly simplifies the task of deadlock resolution, and helps to
+reduce system overhead associated with the resolution. The time
+complexity of our algorithm is also better than or equal to the
+existing algorithms. 
+ </p><p>
+<i>Proceedings of the 16th International Conference on Distribued Computing Systems 
+</i>
+(ICDCS'96), May 1996, Hong Kong. 
+</p><p>
+</p><hr>
+<a href="icdcs96.ps">PostScript</a> /
+<a href="icdcs96.pdf">PDF</a> 
+</body></html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>Eshmun: User Manual</title>
+</head>
+<body>
+    <table width="750px">
+    <tr>
+    <td valign="top" width="200px" style="padding-left: 20px; padding-top: 30px; border-right: solid 1px;">
+        <h2>Navigation</h2>
+        <p>
+        <a href="graph.html">Manipulate Structure</a> <br/><br/>
+        <a href="concurrent.html">Concurrent Kripke Structure</a> <br/><br/>
+        <a href="io.html">Saving and Loading</a> <br/><br/>
+        <a href="export.html">Exporting</a> <br/><br/>
+        <a href="zoom.html">Search and Zoom</a> <br/><br/>
+        <a href="logic.html">Logic and Syntax</a> <br/><br/>
+        <a href="check.html">Model Check</a> <br/><br/>
+        <a href="repair.html">Model Repair</a> <br/><br/>
+        <a href="abstraction.html">Abstractions</a> <br/><br/>
+        </p>
+    </td>
+    <td valign="top" style="padding-left: 50px; padding-top: 30px;">
+        <h2>Model Repair</h2>
+
+        <p>
+        You can repair any model after inputing its specifications, to do so simply
+        go to the Tools Menu -> Model Repair (F9). Model Repair will be carried out for the
+        entire open structure.
+        </p>
+        
+        <p>
+        After model repair is complete, the result is displayed in the status panel (bottom
+        right corner of the screen), with the time required in nano seconds. The deleted transitions and 
+        states appear dashed.
+        </p>
+        
+        <p>
+        To restore the dashed transitions and states, you can go to Tools Menu
+        -> Restore Transitions.
+        </p>
+        
+        <p>
+        You can completely deleted the dashed transitions and states, to do so go to Tools Menu -> Delete Dashed.
+        </p>
+        
+        <p>
+        You can traverse between Concurrentple repairs, by using the left and right arrows next to the 
+        search box (top right corner), Finding newer repairs be costier than the initial model repair, 
+        it requires repairing again. Finding previous repairs is fast, since they are already saved.
+    </td>
+    </tr>
+    </table>
+</body>
+</html>

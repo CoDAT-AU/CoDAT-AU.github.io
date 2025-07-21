@@ -1,0 +1,13 @@
+@article{963782,
+ author = {Paul C. Attie and Anish Arora and E. Allen Emerson},
+ title = {Synthesis of fault-tolerant concurrent programs},
+ journal = {ACM Trans. Program. Lang. Syst.},
+ volume = {26},
+ number = {1},
+ year = {2004},
+ issn = {0164-0925},
+ pages = {125--185},
+ doi = {http://doi.acm.org/10.1145/963778.963782},
+ publisher = {ACM Press},
+ address = {New York, NY, USA},
+ }

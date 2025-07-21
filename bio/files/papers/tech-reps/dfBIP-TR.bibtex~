@@ -1,0 +1,16 @@
+
+@techreport{ABBJSZ16,
+   author = {P.C Attie, S. Bensalem, M. Bozga, M. Jaber, J. Sifakis, F.A. Zaraket},
+   address = {Beirut, Lebanon},
+   institution = {American University of Beirut},
+   month = Spetember,
+   title = {Global and Local Deadlock Freedom in BIP},
+   year = {2016},
+   uri = {http://www.cs.aub.edu.lb/pa07/files/papers/tech-reps/dfBIP-TR.html}
+}
+
+
+
+
+
+

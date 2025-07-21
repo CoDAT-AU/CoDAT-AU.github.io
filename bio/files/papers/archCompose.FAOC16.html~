@@ -1,0 +1,75 @@
+<html><head><title>Dynamic Input/Output Automata: a Formal and Compositional Model for Dynamic Systems</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Dynamic Input/Output Automata: a Formal and Compositional Model for Dynamic Systems</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>
+and N.A. Lynch
+</i>
+</p><p>
+</p><p>
+We present dynamic I/O automata (DIOA), a compositional model of
+dynamic systems, based on I/O automata.  In our model, automata can be
+created and destroyed dynamically, as computation proceeds.  In
+addition, an automaton can dynamically change its signature, that is,
+the set of actions in which it can participate.  This allows us to
+model mobility, by enforcing the constraint that only automata at the
+same location may synchronize on common actions.
+
+Our model features operators for parallel composition, action hiding,
+and action renaming.  It also features a notion of automaton creation,
+and a notion of trace inclusion from one dynamic system to another,
+which can be used to prove that one system implements the other.  Our
+model is hierarchical: a dynamically changing system of interacting
+automata is itself modeled as a single automaton that is ``one level
+higher.'' This can be repeated, so that an automaton that represents
+such a dynamic system can itself be created and destroyed. We can thus
+model the addition and removal of entire subsystems with a single
+action.
+
+We establish fundamental compositionality results for DIOA: if one
+component is replaced by another whose traces are a subset of the
+former, then the set of traces of the system as a whole can only be
+reduced, and not increased, i.e., no new behaviors are added.  That
+is, parallel composition, action hiding, and action renaming, are all
+monotonic with respect to trace inclusion.  We also show that, under
+certain technical conditions, automaton creation is monotonic with
+respect to trace inclusion: if a system creates automaton A_i instead
+of (previously) creating automaton A'_i, and the traces of A_i are a
+subset of the traces of A'_i, then the set of traces of the overall
+system is possibly reduced, but not increased.  Our trace inclusion
+results imply that trace equivalence is a congruence relation with
+respect to parallel composition, action hiding, and action renaming.
+
+Our trace inclusion results enable a design and refinement methodology
+based solely on the notion of externally visible behavior, and which
+is therefore independent of specific methods of establishing trace
+inclusion.  It permits the refinement of components and subsystems in
+isolation from the entire system, and provides more flexibility in
+refinement than a methodology which is, for example, based on the
+monotonicity of forward simulation with respect to parallel
+composition. In the latter, every automaton must be refined using
+forward simulation, whereas in our framework different automata can be
+refined using different methods.
+
+The DIOA model was defined to support the analysis of mobile agent
+systems, in a joint project with researchers at Nippon Telegraph and
+Telephone.  It can also be used for other forms of dynamic systems,
+such as systems described by means of object-oriented programs, and
+systems containing services with changing access permissions.
+
+<hr>
+
+
+<A HREF="http://dx.doi.org/10.1016/j.ic.2016.03.008">Corrected proof on-line</A> / 
+<A HREF="papers/DIOA.pdf">Authors accepted version</A> / 
+<A HREF="https://arxiv.org/abs/1604.06030">Authors accepted version from arXiv</A> / 
+<A HREF="papers/DIOA.bibtex">Bibtex</A> 
+
+
+
+</body></html>
+
+
+

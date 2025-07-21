@@ -1,0 +1,39 @@
+<html><head><title>Wait-free Byzantine Consensus</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Wait-free Byzantine Consensus</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>
+</i>
+</p><p>
+We study the problem of devising wait-free shared
+memory consensus protocols that tolerate Byzantine processes (i.e.,
+processes that have suffered a Byzantine fault).
+We show that weak wait-free Byzantine consensus can be achieved, but only by
+using ``nonresettable'' shared objects, that is, objects whose state
+cannot be reset to an initial state (by any sequence of permissible
+operations). With resettable objects, even a single Byzantine process
+is enough to prevent any solution to weak wait-free Byzantine
+consensus. Our impossibility result holds even if we can limit every
+process (including Byzantine processes) to invoking objects in a
+particular fixed set (i.e., impose access-control). Although
+this limited-access model restricts the amount of damage a
+Byzantine process can do, the restriction is not powerful enough to
+enable a solution using resettable objects. 
+
+<p>
+This paper was the first to suggest the use of access-control in
+shared memory as a way to make the issue of tolerating Byzantine
+faults non-trivial, since otherwise a single faulty process can
+corrupt the entire memory.
+
+
+</p><p>
+<i>Information Processing Letters</i>, vol. 83, no. 4, pp. 221-227, August 2002.
+</p><p>
+</p><hr>
+<a href="byz.ps">PostScript</a> /
+<a href="byz.pdf">PDF</a>
+© 2002 <a href="http://www.elsevier.com/wps/find/homepage.cws_home/">Elsevier</a>
+</body></html>

@@ -1,0 +1,48 @@
+<html><head><title>Efficiently Verifiable Sufficient Conditions for Deadlock-Freedom of Large Concurrent Programs</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Efficiently Verifiable Sufficient Conditions for Deadlock-Freedom of Large Concurrent Programs</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a> and H. Chockler
+</i>
+</p><p> We present two polynomial-time algorithms for automatic
+verification of deadlock-freedom of large finite-state concurrent
+programs.  We consider shared-memory concurrent programs in which a
+process can nondeterministically choose amongst several (enabled)
+actions at any step.  As shown by Ladkin and Simons, deadlock-freedom
+analysis is NP-hard even for concurrent programs of restricted form
+(no nondeterministic choice).  Therefore, research in this area
+concentrates either on the search for efficiently checkable sufficient
+conditions for deadlock-freedom, or on improving the complexity of the
+check in some special cases.  We take the first approach: if our
+algorithms return a positive answer, then the program is actually
+deadlock-free, while a negative answer conveys no information.
+
+
+Our algorithms apply to programs which are expressed in a particular
+syntactic form, in which variables are shared between pairs of
+processes.  The first algorithm is an improvement of the deadlock
+check of 
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS98.html">
+Attie and Emerson</a>.  Its complexity is polynomial
+in all its parameters, as opposed to the exponential complexity of the
+deadlock check of Attie and Emerson.  The second algorithm involves a
+conceptually new construction of a ``global wait-for graph'' for all
+processes. Its running time is also polynomial in all its parameters,
+and it is more discriminating than the first algorithm.
+
+We illustrate our algorithms by applying them to several examples of
+concurrent programs that implement resource allocation and priority
+queues.  To the best of our knowledge, this is the first work that
+describes polynomially checkable conditions for assuring deadlock
+freedom of large concurrent programs.
+</p><p>
+<i>Northeastern University</i>  2004.
+
+</p><p>
+</p><hr>
+<a href="deadlock-TR.ps">PostScript</a> /
+<a href="deadlock-TR.pdf">PDF</a>
+© Paul C. Attie
+</body></html>

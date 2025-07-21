@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>Eshmun: User Manual</title>
+</head>
+<body>
+    <table width="750px">
+    <tr>
+    <td valign="top" width="200px" style="padding-left: 20px; padding-top: 30px; border-right: solid 1px;">
+        <h2>Navigation</h2>
+        <p>
+        <a href="graph.html">Manipulate Structure</a> <br/><br/>
+        <a href="concurrent.html">Concurrent Kripke Structure</a> <br/><br/>
+        <a href="io.html">Saving and Loading</a> <br/><br/>
+        <a href="export.html">Exporting</a> <br/><br/>
+        <a href="zoom.html">Search and Zoom</a> <br/><br/>
+        <a href="logic.html">Logic and Syntax</a> <br/><br/>
+        <a href="check.html">Model Check</a> <br/><br/>
+        <a href="repair.html">Model Repair</a> <br/><br/>
+        <a href="abstraction.html">Abstractions</a> <br/><br/>
+        </p>
+    </td>
+    <td valign="top" style="padding-left: 50px; padding-top: 30px;">
+        <h2>Graph Manipulating: Single Kripke Structure</h2>
+
+        <p>By default, Eshmun loads in Single Kripke Structure mode.</p>
+	    
+	    <p>You can create a new Kripke Structure, by going to the File menu
+	    -> New -> Kripke Structure (Ctrl + k).</p>
+	    <p>
+	    <b>States:</b>
+        You can add a new states by any one of these ways:<ul>
+            <li>Insert Menu -> State</li>
+            <li>Right Click on a Free Spot -> New State</li>
+            <li>Press Insert button with focus inside the Graph Panel.</li>
+        </ul>
+        <p>A dialog will appear, you need to provide a unique name for the state, as well 
+        as the propositional labels it satisfies (comma seperated).</p>
+	    </p>
+	    
+	    <p>
+	    <b>Transitions:</b>
+        You can add a new transition by any one of these ways:<ul>
+            <li>With a State selected, Go to Insert Menu -> Transition</li>
+            <li>Right Click on a State -> Add Transition</li>
+            <li>With a State selected, Press Shift + insert.</li>
+        </ul>
+        
+        <p>The state selected before attempting to add a transition would be the start state, after attempting the add the next
+        state selected would be the end state of the new transition.</p>        
+	    </p>
+	    
+	    <p>
+	    <b>Editing & Removing</b>
+	    <p>To Edit and remove a state or a transition, select it, then either go to the Edit menu, or right click on it.</p>
+	    <p>Also, You can edit a state by simply double clicking on it, or selecting it then pressing F2. You could also delete
+	    a state or a transition by selecting it then pressing delete.</p>
+	    </p>
+	    
+	    <p>
+	    <b>Formatting and Spacing</b>
+	    <p>You can drag and drop states to change your positions, simply hold the left mouse button while on a state to start moving it.</p>
+	    <p>You might want to auto space and format the graph, to do so, go to View menu -> Auto format. If the resulting Graph is not pleasing
+	    enough, you could alter few states manually, then attempt to auto format it again.</p>
+	    <p>Please notice the larger the structure the larger the time needed to format it.</p>
+	    </p>
+	    
+	    <p>
+	    <b>Clear, Undo, & Redo</b>
+	    <p>You can clear the current structure by pressing right click on any free point, 
+	    then choosing clear (Ctrl + l).</p>
+	    <p>You can undo/redo any changes to the current structure by going to the Edit menu ->
+	    Undo / Redo (Ctrl + z, Ctrl + y respectively).
+	    </p>
+    </td>
+    </tr>
+    </table>
+</body>
+</html>
+

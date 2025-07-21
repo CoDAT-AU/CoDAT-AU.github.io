@@ -1,0 +1,60 @@
+<html><head><title>Behavioral Compatibility without State Explosion: A Case Study in Designing a Componentized Elevator Control System</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>The Impossibility of Boosting Distributed Service Resilience</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>,
+R. Guerraoui,
+P. Kouznetsov,
+N.A. Lynch,
+and S. Rajsbaum
+</i>
+</p><p>
+We study f-resilient services, which tolerate up to f
+failures of client processes.  We prove two theorems about
+the impossibility of boosting the resilience of such
+services.  Our first theorem allows any connection pattern
+between processes and services but assumes these services to
+be atomic objects.  The theorem says that no distributed
+system in which processes coordinate using reliable
+registers and f-resilient atomic objects can solve the
+consensus problem in the presence of f+1 undetectable
+process stopping failures. In contrast, we show that it is
+possible to boost the resilience of systems solving problems
+easier than consensus, e.g., k-set consensus.
+
+We also introduce the larger class of failure-oblivious
+services, e.g., totally ordered broadcast. These services
+cannot use information about failures, but are not
+necessarily atomic objects.  We generalize the first theorem
+and its proof to failure-oblivious services.
+
+Our second theorem allows the system to additionally contain
+failure-aware services, e.g., failure detectors, but
+requires that each failure-aware service be connected to all
+processes.  Thus, f+1 process failures overall can disable
+all the failure-aware services.  In contrast, the resilience
+of a system solving consensus can be boosted if arbitrary
+patterns of connectivity are allowed between processes and
+failure-aware services: consensus is solvable for any number
+of failures using only 1-resilient 2-process perfect failure
+detectors.
+
+As far as we know, this is the first time a unified
+framework has been used to express atomic and non-atomic
+objects, and the first time boosting analysis has been
+performed for services more general than atomic objects.
+</p><p>
+<i>Proceedings of the 
+25'th International Conference on Distributed Computing Systems,
+June 2005, Columbus, Ohio.
+</i>
+(ICDCS 2005), June 2005, Columbus, Ohio.
+</p><p>
+</p><hr>
+<a href="icdcs05.ps">
+PostScript</a> /
+<a href="icdcs05.pdf">
+PDF</a> 
+</body></html>

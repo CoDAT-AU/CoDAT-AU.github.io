@@ -1,0 +1,46 @@
+<html><head><title>Behavioral Compatibility without State Explosion: A Case Study in Designing a Componentized Elevator Control System</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Behavioral Compatibility without State Explosion: A Case Study in Designing a Componentized Elevator Control System</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">
+P.C. Attie</a>, D. Lorenz, A. Portnova, and H. Chockler
+</i>
+</p><p>
+Most methods for designing component-based systems and verifying
+their compatibility address only the syntactic compatibility of
+components; no analysis of run-time behavior is made. Those
+methods that do address run-time behavior suffer from
+<i>state-explosion</i>:  the exponential increase of the number
+of global states, and hence the complexity of the analysis, with
+the number of components.  We present a method for designing
+component-based systems and verifying their behavioral
+compatibility and temporal behavior that is not susceptible to
+state explosion. Our method is mostly automatic, with little
+manual deduction required, and does not analyze a large system
+of connected components at once, but instead analyzes components
+two-at-a-time. This pair-wise approach enables the automatic
+verification of temporal behavior, using model-checking, in time
+polynomial in the number and size of all components.  Our method
+checks that behavior of a pair of interacting components
+conforms to given properties, specified in temporal logic.
+Interaction of the components is captured in a product of their
+behavioral automata, which are provided as a part of each
+component's interface. We demonstrate the effectiveness of our
+method by applying it to the design and verification of a
+component-based elevator control algorithm.
+</p><p>
+<i>Proceedings of the 
+The 9th International Symposium on
+Component-Based Software Engineering 
+</i>
+(CBSE 2006), June 2006, Vasteras, Sweden.
+Lecture Notes in Computer Science 4063,
+Springer, 2006, pp. 33-49.
+</p><p>
+</p><hr>
+<a href="cbse06.ps">PostScript</a> /
+<a href="cbse06.pdf">PDF</a> 
+© 2006 <a href="http://www.springer.com/">Springer</a>
+</body></html>

@@ -1,0 +1,28 @@
+@inproceedings{DBLP:conf/dasfaa/SinghMTA95,
+  author    = {Munindar P. Singh and
+               Greg Meredith and
+               Christine Tomlinson and
+               Paul C. Attie},
+  title     = {An Event Algebra for Specifying and Scheduling Workflows.},
+  booktitle = {DASFAA},
+  year      = {1995},
+  pages     = {53-60},
+  ee        = {db/conf/dasfaa/SinghMTA95.html},
+  crossref  = {DBLP:conf/dasfaa/95},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@proceedings{DBLP:conf/dasfaa/95,
+  editor    = {Tok Wang Ling and
+               Yoshifumi Masunaga},
+  title     = {Database Systems for Advanced Applications '95, Proceedings
+               of the 4th International Conference on Database Systems
+               for Advanced Applications (DASFAA), Singapore, April 11-13,
+               1995},
+  publisher = {World Scientific},
+  series    = {Advanced Database Research and Development Series},
+  volume    = {5},
+  year      = {1995},
+  isbn      = {981-02-2220-3},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}

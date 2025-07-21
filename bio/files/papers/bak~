@@ -1,0 +1,3 @@
+cp *.html backup;
+cp *.ps backup;
+cp *.pdf backup;

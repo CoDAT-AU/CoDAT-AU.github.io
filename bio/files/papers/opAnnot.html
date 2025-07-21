@@ -1,0 +1,24 @@
+
+
+<html><head><title>Operational Annotations: A New Method for Sequential Program Verification</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Operational Annotations: A New Method for Sequential Program Verification</h2>
+<hr>
+<p>
+<i>
+Paul Attie
+</i>
+</p><p>
+I present a new method for specifying and verifying the partial correctness of sequential programs. The key observation is that, in Hoare logic, assertions are used as selectors of states, that is, an assertion specifies the set of program states that satisfy the assertion. Hence, the usual meaning of the partial correctness Hoare triple {f} P {g}: if execution is started in any of the states that satisfy assertion f, then, upon termination, the resulting state will be some state that satisfies assertion g. There are of course other ways to specify a set of states. I propose to replace assertions by programs: a program A specifies a set of states as follows: we start A in any state whatsoever, and all the states that A may terminate in constitute the specified set. I thus introduce the operational triple [A] P [B] to mean: if execution of P is started in any post-state of A, then upon termination, the resulting state will be some post-state of B. Here, A is the pre-program, and plays the role of a pre-condition, and B is the post-program, and plays the role of a post-condition.  Finally, I indicate informally how operational annotations can be extended to the verification of concurrent programs.
+</p><p>
+<i>School of Computer and Cyber Sciences, Augusta University,</i>  2022.
+
+</p><p>
+</p><hr>
+
+<A HREF="opAnnot.pdf">Preprint (PDF)</A><br> 
+
+
+<!-- © Paul C. Attie>
+</body></html>

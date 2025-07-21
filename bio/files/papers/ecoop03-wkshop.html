@@ -1,0 +1,44 @@
+<html><head><title>Correctness of Model-based Component Composition without State Explosion</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Correctness of Model-based Component Composition without State Explosion</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a> and D. Lorenz
+</i>
+</p><p>
+We present a methodology for designing component-based systems and
+verifying their temporal behavior properties.  Our verification method
+is mostly automatic, and is not susceptible to the well-known
+\emph{state-explosion} problem, which has hitherto severely limited
+the practical applicability of automatic verification methods.  Our
+method specifies the externally visible behavior of each component $C$
+as several \emph{behavioral interface automaton} ({\BIA}), one for each
+of the other components which $C$ interacts directly with.  A {\BIA} is a
+finite-state automaton whose transitions can be labeled with method
+calls.  For each pair of directly interacting components, we compute
+the product of the {\BIA}. These ``pair machines'' are then verified
+mechanically.  The verified ``pair properties'' are then combined deductively 
+to deduce global properties. Since the pair-machines are the product of
+only two components, they are small, and so their mechanical
+verification, e.g., by model checking, does not run up against
+state-explosion.  The use of several {\BIA} per component enables a clean
+separation between interfaces, so that the interactions of a component
+$C$ with several other components are cleanly separated, and can be
+inspected in isolation.  This in itself promotes the understandability
+of a design.  Our method also enhances extensibility. If a component
+is modified, only the pairs in which that component is involved are
+affected. The rest of the system is undisturbed.  To our knowledge,
+our method is the first approach to behavioral compatibility that does
+not suffer from state-explosion.
+</p><p>
+<i>Proceedings of the 
+ECOOP 2003 Workshop on Correctness of Model-based Software
+Composition
+</i>
+July , 2003, Darmstadt, Germany. 
+</p><p>
+</p><hr>
+<a href="ecoop03-wkshop.ps">PostScript</a> /
+<a href="ecoop03-wkshop.pdf">PDF</a> 
+</body></html>

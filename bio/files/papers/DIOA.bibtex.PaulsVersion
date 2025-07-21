@@ -1,0 +1,31 @@
+@article{Attie2016,
+title = "Dynamic input/output automata: A formal and compositional model for dynamic systems ",
+journal = "Information and Computation ",
+volume = "249",
+number = "",
+pages = "28 - 75",
+year = "2016",
+note = "",
+issn = "0890-5401",
+doi = "http://dx.doi.org/10.1016/j.ic.2016.03.008",
+url = "http://www.sciencedirect.com/science/article/pii/S0890540116000456",
+author = "Paul C. Attie and Nancy A. Lynch",
+keywords = "Dynamic systems",
+keywords = "Formal methods",
+keywords = "Semantics",
+keywords = "Automata",
+keywords = "Process creation",
+keywords = "Mobility ",
+abstract = "Abstract We present dynamic I/O automata (DIOA), a compositional model of dynamic systems. In DIOA, automata can be created and destroyed dynamically, as computation proceeds, and an automaton can dynamically change its signature, i.e., the set of actions in which it can participate. \{DIOA\} features operators for parallel composition, action hiding, action renaming, a notion of automaton creation, and a notion of behavioral subtyping by means of trace inclusion. \{DIOA\} can model mobility, using signature modification, and is hierarchical: a dynamically changing system of interacting automata is itself modeled as a single automaton. We also show that parallel composition, action hiding, action renaming, and (subject to some technical conditions) automaton creation are all monotonic with respect to trace inclusion: if one component is replaced by another whose traces are a subset of the former, then the set of traces of the system as a whole can only be reduced. "
+}
+
+
+
+
+
+
+
+
+
+
+

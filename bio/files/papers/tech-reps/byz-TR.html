@@ -1,0 +1,37 @@
+<html><head><title>Wait-free Byzantine Agreement</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Wait-free Byzantine Agreement</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>
+</i>
+</p><p>
+We study the problem of devising wait-free consensus protocols that
+tolerate Byzantine failures. We show that wait-free Byzantine agreement cannot
+be achieved even in the presence of a single faulty (i.e., Byzantine)
+process. We further show that wait-free weak Byzantine
+agreement cannot be achieved if shared objects are ``resettable,''
+i.e., can be reset to an initial state from any of their reachable states by an
+appropriate sequence of operations. Resettable objects are preferable to
+non-resettable objects, since they can be reused more easily. We introduce a
+non-resettable object, a ``sticky register,'' which is a straightforward
+generalization of the sticky type of Jayanti, and use it to devise a solution
+to wait-free weak Byzantine agreement that tolerates any number of faulty
+processes.  Our impossibility results hold even if we can limit any process
+(including Byzantine processes) to invoking objects in a particular fixed set
+(i.e., impose a particular ``access pattern'').  Finally, we study the problem
+of repetitive wait-free weak Byzantine agreement: how to solve a sequence
+of successive instances of agreement. A straightforward solution uses an
+unbounded number of sticky registers---one for each instance of agreement. We
+show how to bound the number of registers needed by using failure detectors and
+weakening the wait-freedom property of the solution.
+</p><p>
+<i>Northeastern University</i> 2000.
+
+</p><p>
+</p><hr>
+<a href="byz-TR.ps">PostScript</a> /
+<a href="byz-TR.pdf">PDF</a>
+© Paul C. Attie
+</body></html>

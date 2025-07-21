@@ -1,0 +1,32 @@
+<html><head><title>Finite-state concurrent programs can be expressed succinctly in triple normal form</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Finite-state concurrent programs can be expressed succinctly in triple normal form</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>
+
+</i>
+</p><p>
+</p><p>
+I show that any finite-state shared-memory concurrent program P can be
+transformed into triple normal form: all variables are shared
+between exactly three processes, and the guards on actions are
+conjunctions of conditions over this triple-shared state. My result is
+constructive, since the transformation that I present is syntactic,
+and is easily implemented.  If (1) action guards are in disjunctive
+normal form, or are short, i.e., of size logarithmic in the size of P,
+and (2) the number of shared variables is logarithmic in the size of
+P, then the triple normal form program has size polynomial in the size
+of P, and the transformation is computable in polynomial time.
+<hr>
+
+
+<A HREF="triple-express.pdf">Preprint (PDF)</A> /
+<A HREF="triple-express.bibtex">Bibtex</A><br>
+
+
+</body></html>
+
+
+

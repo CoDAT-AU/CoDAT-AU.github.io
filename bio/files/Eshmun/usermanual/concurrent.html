@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>Eshmun: User Manual</title>
+</head>
+<body>
+    <table width="750px">
+    <tr>
+    <td valign="top" width="200px" style="padding-left: 20px; padding-top: 30px; border-right: solid 1px;">
+        <h2>Navigation</h2>
+        <p>
+        <a href="graph.html">Manipulate Structure</a> <br/><br/>
+        <a href="concurrent.html">Concurrent Kripke Structure</a> <br/><br/>
+        <a href="io.html">Saving and Loading</a> <br/><br/>
+        <a href="export.html">Exporting</a> <br/><br/>
+        <a href="zoom.html">Search and Zoom</a> <br/><br/>
+        <a href="logic.html">Logic and Syntax</a> <br/><br/>
+        <a href="check.html">Model Check</a> <br/><br/>
+        <a href="repair.html">Model Repair</a> <br/><br/>
+        <a href="abstraction.html">Abstractions</a> <br/><br/>
+        </p>
+    </td>
+    <td valign="top" style="padding-left: 50px; padding-top: 30px;">
+        <h2>Concurrent Kripke Structure</h2>
+
+        <p>A Concurrent Kripke Structure is a model for concurrent programs, 
+        it is made by a collection of Pair Kripke Structures(*).</p>
+        
+        <p>To create a new a Concurrent Kripke Structure go to File Menu -> New 
+        -> Concurrent Kripke Structure (Ctrl + m in Short).</p>
+        
+        <p>This will change main panel into a tabbed panel, the title of each 
+        tab is the name of the contained sub Kripke Structure and the process-pair
+        inside that structure.</p>
+        
+        <p>
+        <b>Managing Structures:</b>
+        You can do the following:
+            <li>Add a new structure: right click on any tab title -> Add. A
+            Dialog will appear asking for the name of the new structure (has 
+            to be unique), and the process pair inside the structure (also 
+            unique).</li>
+            <li>Edit a structure: right click on the its title -> Edit. A 
+            Dialog will appear asking for the new name and the process pair, same
+            constraint apply.</li>
+            <li>Remove a structure: right click on its title -> Remove.</li>
+            <li>Process Indices: The indices can be any string excluding white
+            spaces and commas. The labels of states that reflect a process
+            related functionality must be suffixed with the appropriate
+            index.</li>
+        </p>
+	    
+	    <p>
+	    <b>Manipulating a sub-structure:</b>
+	    You can Manipulate each structure in the same manner as the single kripke structure. 
+	    Clear, Undo, and Redo only affect the current open sub structure.
+	    </p>
+	    
+	    <p>
+	    <b>Auto generating Isomorphic pairs:</b>
+	    You can auto generate Isomorphic pairs from any <u>single</u> Kripke structure. Open the desired single Kripke
+	    structure, click on the Edit -> Generate Pairs, then enter the specific number of pairs. <br>
+	    
+	    The generated pairs will contain all distinct combination of 2 processes between process 1 to n.
+	    n being the number of pairs entered.<br>
+	    </p>
+	    
+	    <p>
+	    <b>(*) Pair Kripke Structure:</b>
+	    For a single Kripke structure to be a valid <u>Pair</u> structure, it must contain two processes only,
+	    each transition can make a move on one of the two processes (not both), labels ending with a process index (
+	    could be an integer or a string) are considered to be process specific, labels not ending with such an index
+	    are considered to be shared variables.
+	    <p>
+    </td>
+    </tr>
+    </table>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+<html><head><title>On the Refinement of Liveness Properties of Distributed Systems</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>On the Refinement of Liveness Properties of Distributed Systems</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>
+</i>
+</p><p>
+We present a new approach for reasoning about liveness properties of
+distributed systems, represented as automata. Our approach is based on
+simulation relations, and requires reasoning only over finite
+execution fragments. Current simulation-relation based methods for
+reasoning about liveness properties of automata require reasoning over
+entire executions, since they involve a proof obligation of the form:
+if a concrete and abstract execution ``correspond'' via the
+simulation, and the concrete execution is live, then so is the
+abstract execution.
+
+<p>
+Our contribution consists of (1) a formalism for defining liveness
+properties, (2) a proof method for liveness properties based on that
+formalism, and (3) two expressive completeness results:
+firstly, our formalism can express any liveness property
+which satisfies a natural ``robustness'' condition, and
+secondly,  our formalism can express any liveness
+property at all, provided that history variables can be used.
+
+<p>
+To define liveness, we generalize the notion of a complemented-pairs
+(Streett) automaton to an infinite state-space, and an infinite number
+of complemented-pairs.  Our proof method provides two main techniques:
+one for refining liveness properties across levels of abstraction, and
+the other for refining liveness properties within a level of
+abstraction.  The first is based on extending simulation relations so
+that they relate the liveness properties of an abstract (i.e., higher
+level) automaton to those of a concrete (i.e., lower level)
+automaton. The second is based on a deductive method for inferring new
+liveness properties of an automaton from already established liveness
+properties of the same automaton.  This deductive method is
+diagrammatic, and is based on constructing ``lattices'' of liveness
+properties. Thus, it supports proof decomposition and separation of
+concerns.
+</p><p>
+<i>Department of Computer Science, American University of Beirut</i>
+</p><p>
+</p><hr>
+<a href="liveness-TR.ps">PostScript</a> /
+<a href="liveness-TR.pdf">PDF</a>
+© 2006 Paul Attie
+</body></html>

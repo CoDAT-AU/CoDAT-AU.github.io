@@ -1,0 +1,122 @@
+<html>
+<head>
+	<title>Eshmun: User Manual</title>
+</head>
+<body>
+    <table width="750px">
+    <tr>
+    <td valign="top" width="200px" style="padding-left: 20px; padding-top: 30px; border-right: solid 1px;">
+        <h2>Navigation</h2>
+        <p>
+        <a href="graph.html">Manipulate Structure</a> <br/><br/>
+        <a href="concurrent.html">Concurrent Kripke Structure</a> <br/><br/>
+        <a href="io.html">Saving and Loading</a> <br/><br/>
+        <a href="export.html">Exporting</a> <br/><br/>
+        <a href="zoom.html">Search and Zoom</a> <br/><br/>
+        <a href="logic.html">Logic and Syntax</a> <br/><br/>
+        <a href="check.html">Model Check</a> <br/><br/>
+        <a href="repair.html">Model Repair</a> <br/><br/>
+        <a href="abstraction.html">Abstractions</a> <br/><br/>
+        </p>
+    </td>
+    <td valign="top" style="padding-left: 50px; padding-top: 30px;">
+        <h2>Logic and Syntax</h2>
+
+        <p>
+        <b>Specifications</b>
+        <p>Should be written into the first Box bellow the Graph panel. Note
+        that each Kripke structure inside a Concurrent Kripke would have its own 
+        specifications. Please wait a few moments after typing to allow the 
+        thread to process the input before switching from one Tab to the other.</p>
+        </p>
+        
+        <p>
+        <b>Structural Formula</b>
+        <p>It gets added immidiadtly to the repair formula.</p>
+        <p>It is unique for all currently-open structures.</p>
+        <p>To insert a State or transition variable, you can select the state or transition
+        and copy the variable name from the info panel (right bellow the structural formula),
+        or you could click on the state / transition while holding the left shift key, if so
+        the name of the variable gets inserted in the position of the caret in the structural
+        formula box.</p>
+        </p>
+        
+        <p>
+        <b>IDE-like Enviroment</b>
+        <p>Provides auto matching of parenthesis, move the caret next to a parenthesis and it
+        will be underlined with its match.</p>
+        <p>Syntax coloring, and syntax error detection (in red).</p>
+        <p>The Enviroment will also add extra parenthesis in order to make the operator precedence
+        clear and remove ambiguities. To override operator precedence use parenthesis.</p>
+        </p>
+        
+        <p>
+        <b>Syntax</b>
+        <p>Details about the syntax:
+        <ul>
+	        <li>The syntax is case-sensitive.</li>
+	        <li>Boolean Variable: a Boolean Variable starts with a letter, can contain letters, underscores, and numbers.<br>
+			        It cannot be equal to 'A', 'E', 'U', 'W', 'V', 'AG', 'AF', 'AX', 'EG', 'EF', 'EX', 'true', 'false'.
+	        </li>
+	        <li>Boolean Literal: 'true' or 'false'.</li>
+	        <li>CTL Operators: Split into two types: <ol>
+		        <li>Unary CTL Operator: 'AG', 'AF', 'AX', 'EG', 'EF', 'EX'. <br>
+			        should be written as operator(expression). For example: AG(q => p).
+		        </li>
+		        <li>Binary CTL Operator: 'AU', 'EU', 'AW', 'EW', 'AV', 'EV'. <br>
+			        should be written as quantifier(expression Modality expression). For example: A(q U p).
+		        </li>
+	        </ol></li>
+	        <li>Boolean Operator: <ol>
+		        <li>Equivalence Operator: &lt;=&gt; <br>
+			        Commutative and associative: P &lt;=&gt; Q &lt;=&gt; T is the same as Q &lt;=&gt; T &lt;=&gt; P. <br>
+			        However, Notice that P &lt;=&gt; Q &lt;=&gt; T means (P &lt;=&gt; Q) and Q &lt;=&gt; T). <br>
+			        While P &lt;=&gt; (Q &lt;=&gt; T) means P &lt;=&gt; (X) where X is the result of Q &lt;=&gt; T. 
+		        </li>
+		        <li>Implication Operator: =&gt;<br>
+			        Implications can be chained, for example P =&gt; Q =&gt; T, is equivalent to P =&gt; (Q =&gt; T).
+		        </li>
+		        <li>And Operator: &<br>
+			        For example: P & Q & T. and is commutative.
+		        </li>
+		        <li>Or Operator: |<br>
+			        For example: P | Q | T. and is commutative.
+		        </li>
+		        <li>Not Operator: !<br>
+			        For example !P, !(P & Q), ...
+		        </li>
+	        </ol></li>
+        <li>Parenthesized Expression: Any of the above types surrounded by parenthesis.</li>
+        </ul> 
+        </p>
+
+        <p>Operator Precedence: From Lowest to highest<ul>
+	        <li>Equivalence: if an expression has an equivalence or more not surrounded 
+		        by parenthesis then the whole expression is guaranteed to be an equivalence. <br>
+		        For example: P & Q <=> !Q <=> AG(X) | AG => x is equivalent to (P & Q) <=> (!Q) <=> (AG(X) | AG => x)
+	        </li>
+	        <li>Implication: has the second lowest precedence after equivalence. The scope of the Implication extends
+		        (left and right) until the nearest un-parenthesized equivalence. <br>
+		        For example : P & Q | AG(X) => S | Q => X is equivalent to (P & Q | AG(X)) => ( (S | Q) => X )
+	        </li>
+	        <li>And: When having a sequence of ands and ors, each consecutive sequence of or is grouped as a term in an and. <br>
+		        For example : P & Q & Z | Y | X & N & M | X & S is equivalent to (P) & (Q) & (Z | Y | X) & (N) & (M | X) & (S)
+	        </li>
+	        <li>Or: Cannot contain any other boolean operator except for not (unless operators were parenthesized). <br>
+		        For example : P & Q | X | !Y | (X & P) is equivalent to (P) & ((Q) | (X) | (!Y) | (X & P))
+	        </li>
+	        <li>Not: Highest precedence among boolean operators. Tends to be atomic unless attached to a parenthesized expression. <br>
+		        !X & Y => !Q & !(Q <=> K) is equivalent to ( (!(X)) & (Y) ) => ( (!(Q)) & ( !(Q <=> K) ) )
+	        </li>
+	        <li>CTL Operators: the scope of any CTL Operator is only within the parenthesized expression attached to it. <br>
+		        AG(X => Q & AF(K)) => Q is equivalent to ( AG( (X) => ( Q & ( AF(K) )) ) ) => Q <br>
+		        Inside the scope of the CTL Operator the same order of precedence is respected.
+	        </li>
+	        <li>Parenthesized Expression: has the highest precedence, used in the usual way.</li>
+        </ul></p>
+        </p>
+    </td>
+    </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> <title>Research</title> </head>
+
+<body text="000000" bgcolor="#FFFFFF"> 
+<!-- ---alternative link colors--- LINK="#215E21" VLINK="A62A2A"-->
+
+
+<p></p><h1 align="CENTER">Paul Attie's Research</h1>
+
+
+My research addresses the conceptual difficuly and the computational complexity of the design and
+verification of large concurrent software systems. I have produced models and results for 
+<a href="#DIOA">complex dynamic behavior (DIOA)</a>, 
+
+<a href="#deadlockFreedom">deadlock freedom</a>, 
+
+<a href="#faultTolerance">fault-tolerance</a> (impossiblity of boosting fault-tolerance) and for
+
+reducing the complexity of reasoning about finite-state concurrent programs 
+(<a href="#pairwise">pairwise normal form</a> and 
+<a href="#architectures"> software architectures</a>).  
+
+By representing a finite-state concurrent program in pairwise normal form, 
+I have also produced algorithms for tractable (polynomial time)
+checking of deadlock-freedom, safety, and livness of finite-state concurrent programs.
+Software architectures enforce correctness properties by applying coordinators to a concurrent program, so post hoc verification is not necessary.
+
+I have devised a method for the <a href="#repair"> automatic repair</a>
+of a finite Kripke structure so that it satisfies a given CTL formula, 
+and have implemented this method in the <a href="http://eshmuntool.blogspot.com/">Eshmun</a> tool.
+By extending the repair method to pairwise normal form, Eshmun is capable of repairing state-spaces of up to 
+3<sup>50</sup> states. Repair can also be applied to concurrent programs.
+
+
+
+
+
+
+
+<br><br>
+<a name="DIOA"></a>
+<p></p><li><b>Dynamic input-output automata (DIOA) </b><br>
+
+<p> Together with Nancy Lynch, I have devised the Dynamic Input-Output Automaton (DIOA) model <a href="#AL16">[AL16]</a>, which extends Lynch's
+well-known Input-Output Automaton model to deal with
+<font color="red">dynamic process creation and dynamic change of behavior</font>.
+DIOA enables a process to
+change, at run time, the set of actions in which it is willing to participate, and it enables new processes to be created by the execution of an
+action. A process can self-destruct by setting its actions to the empty set. We establish monotonicity of trace inclusion w.r.t. parallel composition,
+action hiding, action renaming, and process creation: in a global system, replacing a single process by one with fewer traces cannot cause the new
+system to have more traces than the original one.
+
+
+<br><br>
+<a name="deadlockFreedom"></a>
+</p><p></p></li><li><b>Deadlock-freedom of concurrent programs</b><br>
+
+<p> We give a sufficient criterion, for the
+<font color="red">deadlock freedom</font> of large concurrent programs. In the finite-state case, this criterion can often be verified
+by checking small subsystems <a href="#ABBJSA13">[ABBJSA13, </a> <a href="#ABBJSA16">ABBJSA16]</a> of the overall large program.  The criterion uses
+the notion of supercycle, first introduced in <a href="#AE98">[AE98], </a>.  We show that the notion of supercycle is the first (to our knowledge)
+characterization of deadlock in concurrent programs 
+(where processes have local nondeterministic choice of which event to execute) that is both sound <i>and complete</i> for deadlock-freedom.
+Completeness is
+sacrificed only by restricting evaluation to small subsystems. Hence we have early stopping in some cases, together with theoretical completeness.
+Since all common formalisms (I/O automata, BIP, CSP, CCS, pi-calculus, etc) allow local nondeterminism, ours is the first sound and complete 
+deadlock criterion for all these formalisms.
+
+
+<br><br>
+<a name="pairwise"></a>
+<p></p></li><li><b>Tractable synthesis and verification of concurrent programs via property-preserving pairwise composition</b><br>
+
+<p>
+I have devised a representation, <font color="red">pairwise normal form</font>
+<a href="#Att16a">[Att16a, </a>
+<a href="#Att16b">Att16b]</a>,
+for describing a large concurrent program consisting of many processes so that
+behavioral properties can be verified by analyzing <i>small subsystems</i>
+consisting of a few processes. The key idea is that, for each pair of processes
+that interact directly, isolate the code that defines their interaction from all
+of the other code in the system.  For example, global mutual exclusion can be
+verified by checking mutual exclusion of each pair of processes.  
+Subject to some technical conditions,
+behavioral property <i>f<sub>ij</sub></i> of the interaction of processes 
+<i>P<sub>i</sub></i> and <i>P<sub>j</sub></i>
+also holds in the global system
+<i>P<sub>1</sub></i> || ... || <i>P<sub>n</sub></i>.  Hence such
+pairwise properties can be verified by checking the pair-subsystem 
+<i>P<sub>i</sub></i> || <i>P<sub>j</sub></i>
+which consists of processes
+<i>P<sub>i</sub></i> and <i>P<sub>j</sub></i>
+<i>interacting in isolation</i>.
+
+</p><p>
+I use pairwise normal form to give an efficient (polynomial in the number of processes) algorithm for the synthesis of concurrent programs
+from CTL specifications.
+The synthesis method accommodates the  <font color="red">dynamic addition</font> (at run time)  of processes
+<a href="#Att16a">[Att16a]:</a>.
+new processes can be verified to behave correctly by checking their interaction
+with existing components with which the new component directly interacts.
+
+<p>
+In addition, the <font color="red">absence of global and local deadlock</font> can be verified by checking small subsystems
+<a href="#ABBJSA13">[ABBJSA13]</a> of the overall global system.
+Since small subsystems can be analyzed automatically, by model checking, this
+approach therefore avoids the verification and analysis difficulties induced by
+state-explosion.
+
+</p><p>
+The isolation of code in this pairwise manner also enables <b>locality</b>
+and <b>modifiability</b>: the system can be understood by reading each piece of
+pairwise code by itself, and the system can be modified by changing each piece
+of pairwise code by itself.  If the global system currently satisfies
+<i>f<sub>ij</sub></i>
+(for the interaction between two processes) and we wish to modify it to satisfy
+<i>f'<sub>ij</sub></i>, then only the pairwise code that defines the interaction between
+<i>P<sub>i</sub></i> and <i>P<sub>j</sub></i> need be modified.
+
+
+
+<br><br>
+<a name="architectures"></a>
+</p><p></p></li><li><b> Software architectures </b><br>
+
+<p>
+Another method for achieving locality and modifiability is to
+associate each correctness property with a particular
+<font color="red">coordinator process</font>
+<a href="#ABBJS16">[ABBJS16, </a>
+<a href="#ABBJS14">ABBJS14]</a>, which enforces the property. This makes it easy
+to verify the property, and to modify it if necessary, since all the
+code associated with the property is in one place, instead of being
+distributed across many processes. 
+Both safety and liveness properties are dealt with.
+Liveness is analyzed by checking that every pair of coordinators do
+not "interfere" with each other.
+
+
+<br><br>
+<a name="repair"></a>
+</p><p></p></li><li><b> Automatic repair, modification, and visualization of run-time behavior: bridging the cognitive gap between syntax and semantics </b><br>
+
+<p> A key challenge in getting software right is the huge discrepancy in complexity between the software itself (syntax, i.e., the code) and the
+run-time dynamic behavior of software (semantics). Concurrent algorithms expressible in a few pages of code can have complex behavior, and some
+published algorithms have been found (after publication) to be erroneous.
+
+</p><p> For finite-state concurrent programs, I have formalized
+<font color="red">mappings from syntax to semantics and semantics to syntax</font> <a href="#AE98">[AE98, </a>
+<a href="#AE01">AE01, </a> <a href="#Att16a">Att16a]</a>.  A concurrent program (syntax) is a set of processes, and each process is a is a set of
+guarded commands that read and write shared memory.  The semantics of a concurrent program is given by one or more state-transition diagrams (Kripke
+structures).  I have implemented a GUI-based tool, <a href="http://eshmuntool.blogspot.com/">Eshmun</a>, which enables the display and modification of
+Kripke structures and concurrent programs. Modification can be by manual editing, or by
+<font color="red">automatic repair</font>
+<a href="#ADS16">[ADS16, </a> <a href="#ACDSS15">ACDSS15]</a> w.r.t. a CTL specification: given a Kripke structure <i>M</i> 
+and a CTL formula <i>f</i>, 
+a boolean repair formula is generated which is passed to a SAT solver. A satisfying assignment determines which states and transitions must be deleted 
+from <i>M</i> so that <i>f</i> is satisfied.
+
+</p><p> By using pairwise normal form, Eshmun can display, modify, and repair state-transition systems with up to 3<sup>50</sup> states, taking between 10
+seconds and two minutes to do so, depending on the length of the CTL specification.  In pairwise normal form, the semantics of a concurrent program is
+given by a set of <i>pair-structures</i>: for each directly interacting pair of processes, a Kripke structure is given which describes the
+interaction. So, 50 process mutual exclusion is represented by 1225 pair-structures, each with 9 states.  These pair-structures can be modified
+manually, or can be automatically repaired so as to satisfy a given property <i>f<sub>ij</sub></i>.  A new concurrent program can be automatically
+extracted from the modified state-transition system. The repair formula grows only quadratically with number of processes, 
+and this enables a large number of processes to be handled.
+
+</p><p> Repair can also be used to <font color="red">synthesize</font> concurrent programs: start with a naive program which permits all possible
+transitions, generate its pairwise Kripke structures, repair these, and extract a correct concurrent program from them.
+
+
+
+<br><br>
+<a name="faultTolerance"></a>
+<p></p><li><b>Fault-tolerance in distributed and concurrent systems </b><br>
+
+<p>
+A major source of complexity in the design and implementation of
+concurrent and distributed software is the possibility of  <font color="red">faults</font>.
+In <a href="#AAE04">[AAE04]</a> a method for
+<font color="red">synthesizing fault-tolerant concurrent programs from CTL specifications</font> is given.
+
+Also, in <a href="#AGKLS11">[AGKLS11] </a>, the question of
+<font color="red">boosting fault-tolerance</font> is treated: given a service that can
+tolerate <i>f</i> undetectable crash failures, do there exist
+distributed protocols for boosting the fault tolerance to <i>f+1</i>?
+We give various conditions for the existence and non-existence of
+boosting protocols.
+
+
+
+<br><br>
+</p><p></p><h2 align="LEFT">References</h2>
+
+
+<a name="ADS16"></a>
+<p>[ADS16]<br>
+Model and Program Repair via SAT Solving<br>
+Paul C. Attie, Kinan Dak Al Bab, and Mohamad Sakr<br>
+To appear in <a href="http://tecs.acm.org/">
+ACM Transactions on Embedded Computing Systems (TECS)</a><br>
+(accepted with minor revisions).<br>
+<A HREF="papers/repair.html">Abstract</A> /
+<A HREF="papers/repair.pdf">Preprint (PDF)</A><br>
+
+<font color="green">
+<i>Synopsis</i>: 
+Presents a method for the repair of Kripke structures and concurrent
+programs so that they satisfy a specification in the temporal logic CTL.
+The method is implemented in the GUI-based tool <a href="http://eshmuntool.blogspot.com/">Eshmun</a>.
+</font>
+
+
+<a name="Att16a"></a>
+</p><p>[Att16a]<br>
+Synthesis of Large Dynamic Concurrent Programs from Dynamic Specifications<br>
+Paul C. Attie.<br>
+<a href="http://link.springer.com/journal/10703">Formal Methods in System Design</a>
+<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/dpair.html">Abstract</a> /
+<a href="http://link.springer.com/article/10.1007/s10703-016-0252-9">Published version</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/tech-reps/dynamicPairTR.pdf">Preprint</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/dpair.bibtex">Bibtex</a> <br>
+
+<font color="green">
+<i>Synopsis</i>: Presents pairwise normal form and gives an efficient (polynomial in the number of processes) method for synthesizing large concurrent
+programs from CTL specifications, using pairwise normal form. Shows that concurrent programs in pairwise normal form inherit correctness properties
+from each pair-system, i.e., each pair of interacting processes executing in isolation. Does not assume that processes are similar.
+Also handles dynamic addition of processes. See more detailed discussion above.
+</font>
+
+
+<a name="AL16"></a>
+</p><p>[AL16]<br>
+Dynamic Input/Output Automata: a Formal and Compositional Model for Dynamic Systems<br>
+Paul C. Attie and Nancy A. Lynch<br>
+Information and Computation, Vol. 249, August 2016, pp. 28-75<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/DIOA.html">Abstract</a> /
+<a href="http://dx.doi.org/10.1016/j.ic.2016.03.008">Corrected proof on-line</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/DIOA.pdf">Authors accepted version</a> /
+<a href="https://arxiv.org/abs/1604.06030">Authors accepted version from arXiv</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/DIOA.bibtex">Bibtex</a> <br>
+
+<font color="green">
+<i>Synopsis</i>: 
+Presents dynamic input-output automata, which extends input-output
+automata to deal with process creation/destruction and dynamic change
+of signature. 
+</font>
+
+
+
+<a name="Att16b"></a>
+</p><p>[Att16b]<br>
+Finite-state concurrent programs can be expressed in pairwise normal form<br>
+Paul C. Attie<br>
+Theoretical Computer Science, Vol. 619, 14 March 2016, pp. 1–31.<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/pairExpress.TCS16.html">Abstract</a> /
+<a href="http://dx.doi.org/10.1016/j.tcs.2015.11.032">Published version</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/pairExpress.TCS16.bibtex">Bibtex</a><br>
+
+<font color="green">
+<i>Synopsis</i>: 
+Shows that any concurrent program can be rewritten in pairwise normal
+form, up to strong bisimulation. Hence restriction to pairwise normal
+form does not incur any loss of expressiveness.
+</font>
+
+
+<a name="ABBJS16"></a>
+</p><p>[ABBJS16]<br>
+A General Framework for Architecture Composability<br>
+Paul C. Attie, Eduard Baranov, Simon Bliudze, Mohamad Jaber, and Joseph Sifakis<br>
+Formal Aspects of Computing, April 2016, Vol. 28, Issue 2, pp 207-231.<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/archCompose.FAOC16.html">Abstract</a> /
+<a href="http://link.springer.com/article/10.1007/s00165-015-0349-8">Published version (open access)</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/archCompose.FAOC16.bibtex">Bibtex</a><br>
+
+<font color="green">
+<i>Synopsis</i>: 
+Proposes the notion of a software architecture, as a set of
+coordinators, which enforce specified safety and liveness properties.
+</font>
+
+
+<a name="ABBJSA16"></a>
+</p><p>[ABBJSA16]<br>
+Global and Local Deadlock in BIP<br>
+Paul C Attie, Saddek Bensalem, Marius Bozga, Mohamad Jaber, Joseph Sifakis, and Fadi A Zaraket<br>
+To appear in ACM Transactions on Software Engineering Methodology (accepted with minor revisions).<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/dfBIP.html">Abstract</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/dfBIP.pdf">Preprint (PDF)</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/dfBIP.bibtex">Bibtex</a>
+<br>
+
+<font color="green">
+<i>Synopsis</i>:  Presents a sound and complete criterion for deadlock
+freedom. The criterion can be verified in small subsystems, in which case it becomes incomplete. 
+It is the first sound and complete characterization of deadlock in models of concurrency with nondeterministic
+local choice of actions, e.g., CCS, CSP, I/O Automata, BIP.
+</font>
+
+
+<a name="ACDSS15"></a>
+</p><p>[ACDSS15]<br>
+Model and Program Repair via SAT Solving<br>
+Paul C. Attie, Ali Cherri, Kinan Dak Al Bab, Mohamad Sakr, and Jad Saklawi<br>
+<a href="http://memocode.irisa.fr/2015/">
+13th ACM-IEEE International Conference on Formal Methods and Models for System Design
+(MEMOCODE'15)</a>
+September 2015, Austin, Texas, USA.<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/repair.MEMOCODE15.html">Abstract</a> /
+<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7340481">Published vesion</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/repair.MEMOCODE15.pdf">Authors on-line version</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/repair.MEMOCODE15.bibtex">Bibtex</a>
+
+
+
+<a name="ABBJS14"></a>
+</p><p>[ABBJS14]<br>
+A General Framework for Architecture Composability<br>
+Paul C. Attie, Eduard Baranov, Simon Bliudze, Mohamad Jaber, and Joseph Sifakis<br>
+<a href="http://sefm2014.inria.fr/index.html">12th International Conference on Software Engineering and Formal Methods\
+ (SEFM)</a>,
+September, 2014, Grenoble, France.<br>
+<a href="http://link.springer.com/chapter/10.1007%2F978-3-319-10431-7_10">Published version</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/archCompose.SEFM14.bibtex">Bibtex</a>
+
+<a name="ABBJSA13"></a>
+</p><p>[ABBJSA13]<br>
+An Abstract Framework for Deadlock Prevention in BIP<br>
+Paul C Attie, Saddek Bensalem, Marius Bozga, Mohamad Jaber, Joseph Sifakis, and Fadi A Zaraket<br>
+2013 IFIP Joint International Conference on Formal Techniques for Distributed Systems
+(33rd FORTE / 15th FMOODS), June 2013, Florence, Italy.<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/forte13.html">Abstract</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/forte13.pdf">PDF</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/forte13.bibtex">Bibtex</a>
+<br>
+
+<font color="green">
+<i>Synopsis</i>: Presents a sufficient but not necessary criterion for deadlock
+freedom, which can often be checked quickly.
+</font>
+
+<a name="AGKLS11"></a>
+</p><p>[AGKLS11]<br>
+The Impossibility of Boosting Distributed Service Resilience<br>
+P.C. Attie, R. Guerraoui, P. Kouznetsov, N.A. Lynch, and S. Rajsbaum<br>
+<a href="http://www.sciencedirect.com/science/journal/08905401/209/6">
+Information and Computation 209(6):927-950, June 2011.</a><br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/IandC11.html">Abstract</a>  / 
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/IandC11.pdf">PDF</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/IandC11.bibtex">Bibtex</a><br> 
+
+<font color="green">
+<i>Synopsis</i>: Given a service that can
+tolerate <i>f</i> undetectable crash failures, 
+we give various conditions for the existence and non-existence of
+boosting protocols that improve the tolerance of the service to <i>f+1</i>.
+</font>
+
+<a name="AAE04"></a>
+</p><p>[AAE04]<br>
+Synthesis of Fault-tolerant Concurrent Programs<br>
+P.C. Attie, A. Arora, and E.A. Emerson<br>
+<i>ACM Transactions on Programming Languages and Systems (TOPLAS)</i>
+vol. 26, no. 1, pp 125-185, January 2004.<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS04.html">Abstract</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS04.ps">Postscript</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS04.pdf">PDF</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS04.bibtex">Bibtex</a> <br>
+
+<font color="green">
+<i>Synopsis</i>: Presents a method for synthesizing
+fault-tolerant concurrent programs from CTL specifications.
+</font>
+
+<a name="AE01"></a>
+</p><p>[AE01]<br>
+Synthesis of Concurrent Systems for an
+Atomic Read/Write Model of Computation.<br>
+P.C. Attie and E.A. Emerson<br>
+<i>ACM Transactions on Programming Languages and Systems (TOPLAS)</i><br>
+vol. 23, no. 2, pp. 187-242, March 2001.<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/podc96.ps">Extended abstract</a> appears in
+<i>ACM Symposium on the Principles of Distributed Computing (PODC) 1996</i><br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS01.html"> Abstract</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS01.ps"> Postscript</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS01.pdf">PDF</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS01.bibtex">Bibtex</a> <br>
+
+<font color="green">
+<i>Synopsis</i>: Presents a method for synthesizing low-atomicity concurrent programs, which use only atomic registers, from CTL specifications.
+</font>
+
+<a name="AE98"></a>
+</p><p>[AE98]<br>
+Synthesis of Concurrent Systems With Many Similar Processes<br>
+P.C. Attie and E.A. Emerson<br>
+<i>ACM Transactions on Programming Languages and Systems</i>,
+vol. 20, no. 1, pp. 51-115, January 1998<br>
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS98.html">Abstract</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS98.ps">Postscript</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS98.pdf">PDF</a> /
+<a href="http://www.cs.aub.edu.lb/pa07/files/papers/TOPLAS98.bibtex">Bibtex</a> <br>
+
+<font color="green">
+<i>Synopsis</i>: Presents an efficient (polynomial in the number of processes) method for synthesizing a large concurrent program from a CTL specification, under the assumption that all processes in the
+program are similar. 
+</font>
+
+
+</p></li>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+</body></html>

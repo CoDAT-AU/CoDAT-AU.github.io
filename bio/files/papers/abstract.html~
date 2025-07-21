@@ -1,0 +1,27 @@
+<html><head><title>     </title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>         </h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a>
+</i>
+</p><p>
+
+abstract goes here
+
+</p><p>
+<i>journal name </i> vol:pp, year.
+A preliminary version appeared in the 
+<i>Proceedings of the 
+......conference name</i>
+(ACRONYM year), month year, city, country.
+Lecture Notes in Computer Science 1522,
+Springer, 1998, pp. 421-432.
+</p><p>
+</p><hr>
+<a href=".ps">PostScript</a> /
+<a href=".pdf">PDF</a>
+© 1998 <a href="http://www.springer.com/">Springer</a>,
+2002 <a href="http://www.acm.org/">ACM</a>.
+</body></html>

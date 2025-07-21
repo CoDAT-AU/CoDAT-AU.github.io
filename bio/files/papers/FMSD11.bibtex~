@@ -1,0 +1,12 @@
+@article{DBLP:journals/fmsd/Attie11,
+  author    = {Paul C. Attie},
+  title     = {On the refinement of liveness properties of distributed
+               systems},
+  journal   = {Formal Methods in System Design},
+  volume    = {39},
+  number    = {1},
+  year      = {2011},
+  pages     = {1-46},
+  ee        = {http://dx.doi.org/10.1007/s10703-011-0117-1},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}

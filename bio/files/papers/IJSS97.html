@@ -1,0 +1,47 @@
+<html><head><title>Automating the Refinement of Specifications for Distributed
+Systems via Syntactic Transformations</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Automating the Refinement of Specifications for Distributed
+Systems via Syntactic Transformations</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a> and C. Das
+</i>
+</p><p>
+The idea of successively refining an abstract specification until it
+contains enough details to suggest an implementation has been investigated by
+numerous researchers. The emphasis to date has been on techniques that,
+unfortunately, lead to a large amount of manual formal labor for each
+refinement step.  With such techniques, both the cost and the possibility
+of errors arising in formal manipulation are high. Using a theorem prover
+can reduce the number of manipulation errors, but, given current
+technology, the amount of labor is still daunting.
+This research explores an alternative solution to the refinement
+problem, namely the use of syntactic transformations
+to realize each refinement step. We reduce formal labor by employing
+automatic transformations that guarantee the preservation of desirable
+properties --- e.g., deadlock-freedom. Automatic transformations are
+particularly appealing for the development of large, complex distributed
+systems, where a manual approach to refinement would be prohibitively expensive.
+Distributed computations are, by nature, reactive and concurrent, so their
+correctness cannot be specified as a simple functional relationship
+between inputs and outputs.  Instead, specifications must describe the
+time-varying behavior of the system. Further difficulty is caused by the
+fact that such important characteristics of distribution as
+deadlock-freedom are global properties that cannot be achieved through
+considering local structures only. Transformations generally must
+encompass the entire system.
+
+<p>
+This paper presents two syntactic transformations --- the
+left-sequence introduction and the right-sequence introduction --- and
+demonstrates that they preserve deadlock-freedom.
+</p><p>
+<i> International Journal of Systems Science</i>, Special Issue on
+Distributed Computing Systems 28(11), 1997, 1129-1144
+</p><p>
+</p><hr>
+<a href="IJSS97.ps">PostScript</a> /
+<a href="IJSS97.pdf">PDF</a>
+</body></html>

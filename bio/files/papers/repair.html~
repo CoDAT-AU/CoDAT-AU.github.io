@@ -1,0 +1,44 @@
+<html><head><title>Model and Program Repair via SAT Solvers</title></head>
+<body bgcolor="#ffffff">
+<hr>
+<h2>Model and Program Repair via SAT Solvers</h2>
+<hr>
+<p>
+<i><a href="http://www.cs.aub.edu.lb/pa07/">P.C. Attie</a> K. Dak El Bab, and M. Sakr
+</i>
+</p><p>
+We consider the following model repair problem: given a finite
+Kripke structure M and a specification formula phi in some modal or
+temporal logic, determine if M contains a substructure M' (with the
+same initial state) that satisfies phi. Thus, M can be "repaired" to satisfy
+the specification phi by deleting some transitions. Model repair can be
+used for automated debugging of finite-state shared memory concurrent
+programs. Given a program P, generate its transition graph M, repair M
+with respect to the specification, and then extract a correct concurrent
+program P' from the repaired model M' by using the method of Attie and Emerson
+to extract atomic read/write shared memory concurrent programs from
+Kripke structures.
+
+
+We show that model repair is NP-complete for CTL.
+We also exhibit a deterministic polynimial-time algorithm for mapping an
+instance (M,phi) of
+the model repair problem to a boolean formula such that (M,phi) has a
+solution iff the formula is satisfiable. Furthermore, a satisfying assign-
+ment determines which transitions must be removed from M to generate
+a model M' of phi. Thus, we can use any SAT solver to repair Kripke
+structures. Furthermore, using a complete SAT solver yields a complete
+algorithm: it always finds a repair if one exists.
+
+</p><p>
+<i>Department of Computer Science, American University of Beirut</i>  2015.
+
+</p><p>
+</p><hr>
+
+<A HREF="repairTR.pdf">PDF</A><br> 
+
+<!-- <a HREF="http://front.math.ucdavis.edu/0710.3332">arXiv page</a></br> -->
+
+<!-- © Paul C. Attie>
+</body></html>

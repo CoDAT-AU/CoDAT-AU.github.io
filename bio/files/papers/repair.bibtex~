@@ -1,0 +1,15 @@
+
+@techreport{ABBJSZ16,
+   author = {Paul C. Attie, Kinan Dak Al Bab, and Mohamad Sakr},
+   address = {Beirut, Lebanon},
+   institution = {American University of Beirut},
+   month = June,
+   title = {Model and Program Repair via SAT Solving},
+   year = {2015},
+}
+
+
+
+
+
+

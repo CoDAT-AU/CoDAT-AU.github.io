@@ -1,0 +1,33 @@
+@article{DBLP:journals/fmsd/Attie11,
+  author    = {Paul C. Attie},
+  title     = {On the refinement of liveness properties of distributed
+               systems},
+  journal   = {Formal Methods in System Design},
+  volume    = {39},
+  number    = {1},
+  year      = {2011},
+  pages     = {1-46},
+  ee        = {http://dx.doi.org/10.1007/s10703-011-0117-1},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+
+
+
+@article {springerlink:10.1007/s10703-011-0117-1,
+   author = {Attie, Paul},
+   affiliation = {Department of Computer Science and Center for Advanced Mathematical Studies, American University of Beirut, P.O. Box 11-023
+6, Riad El Solh, Beirut, 1107 2020 Lebanon},
+   title = {On the refinement of liveness properties of distributed systems},
+   journal = {Formal Methods in System Design},
+   publisher = {Springer Netherlands},
+   issn = {0925-9856},
+   keyword = {Engineering},
+   pages = {1-46},
+   volume = {39},
+   issue = {1},
+   url = {http://dx.doi.org/10.1007/s10703-011-0117-1},
+   note = {10.1007/s10703-011-0117-1},
+   year = {2011}
+}
+

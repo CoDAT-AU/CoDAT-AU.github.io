@@ -1,0 +1,101 @@
+<HTML> 
+<HEAD> <TITLE>Tools</TITLE> </HEAD>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="000000"> 
+<! ---alternative link colors--- LINK="#215E21" VLINK="A62A2A">
+
+
+<P>
+<H1 ALIGN=CENTER>Paul Attie's Software Tools</H1>
+
+
+
+<P><LI><B><A HREF="https://codat-au.github.io/">CoDAT: Code Documentation and Analysis to Secure Software Development</A></B></br>
+
+CoDAT is a tool designed to maintain consistency between the various
+levels of code documentation, e.g. if a line in a code sketch is
+changed, the comment that documents the corresponding code is also
+changed. That is, comments are linked and updated so as to remain
+internally consistent and also consistent with the code. By flagging
+"out of date" comments, CoDAT alerts the developer to maintain
+up-to-date documentation.
+
+<p>
+We use a large language model to check the semantic consistency
+between a fragment of code and the comments that describe it. Thus we
+also flag semantic inconsistency as well as out of date comments. This
+helps programers write code that correctly implements a code sketch,
+and so provides machine support for a step-wise refinement approach,
+starting with a code sketch and proceeding down to code through one or
+more refinement iterations.  CoDAT is implemented in the Intellij IDEA
+IDE where we use the Code Insight daemon package alongside a custom
+regular expression algorithm to mark tagged comments whose
+corresponding code blocks have changed. CoDAT's
+backend is structurally decentralized to allow a distributed ledger
+framework for code consistency and architectural compilation tracking.
+
+
+
+
+<P><LI><B><A HREF="http://eshmuntool.blogspot.com">Eshmun: Model repair via SAT solving</A></B></br>
+
+This work presents an algorithm which takes a Kripke structure <i>M</i> and
+temporal logic formula <i>f</i>, and modifies  <i>M</i>, by removing 'violating'
+transitions, so that  <i>M</i> satisfies <i>f</i>. The algorithm has been implemented
+as the tool <b>Eshmun</b>, and has been applied
+successfully to many examples, including mutual exclusion, dining
+pholosophers, barrier-synchronization,
+automated teller machine. 
+Kripke structures can serve as finite-state models for non-terminating
+reactive programs, and so this work has application in the
+specification and modeling of reactive systems.
+The Eshmun tool and a technical report describing this work can be downloaded
+<A HREF="http://eshmuntool.blogspot.com">here</A>.
+A user manual for Eshmun is available <A HREF="Eshmun/usermanual/index.html">here</A>.
+The following paperz presents Eshmun.
+<UL>
+
+
+
+<P><LI>
+Model and Program Repair via SAT Solving<br>
+Paul C. Attie, Kinan Dak Al Bab, and Mohamad Sakr<br>
+<A HREF = "http://tecs.acm.org/">ACM Transactions on Embedded Computing Systems (TECS),</A></BR>
+December 2017, Volume 17, Issue 2, pp. 1-25  </BR>
+<A HREF="papers/repair.html">Abstract</A> /
+<A HREF="papers/repair.pdf">Preprint (PDF)</A> /
+<A HREF="papers/tech-reps/repair-TR.pdf">Technical report (longer than preprint)</A> /
+<A HREF="papers/repair.bibtex">Bibtex</A><br>
+<font color="green">
+<i>Synopsis</i>: 
+Presents a method for the repair of Kripke structures and concurrent
+programs so that they satisfy a specification in the temporal logic CTL.
+The method is implemented in the GUI-based tool <a href="http://eshmuntool.blogspot.com/">Eshmun</a>.
+</font><BR>
+  
+<P><LI>
+<A HREF = "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7340481">Model and Program Repair via SAT Solving</A></BR>
+Paul C. Attie, Ali Cherri, Kinan Dak Al Bab, Mohamad Sakr, and Jad Saklawi<br>
+<A HREF = "http://memocode.irisa.fr/2015/">
+13th ACM-IEEE International Conference on Formal Methods and Models for System Design
+(MEMOCODE'15)</A>
+September 2015, Austin, Texas, USA. 
+
+
+
+
+  
+</UL>
+
+
+
+
+
+
+</UL> 
+
+
+
+</BODY>
+
+</HTML>
