@@ -21,6 +21,7 @@ We present the Code Documentation and Analysis Tool (CoDAT). CoDAT is a tool des
 
 | Product | Vulnerability Category | Vulnerability Impact | Severity | CVSS Base Score | CVSS Vector | CVE Number |
 | --- | --- | --- | --- | --- | --- | 
+| Shopify Github Repository | OS Command Injection (CWE-78) | Command Injection | High | 8.1 | CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:U | [CVE-2025-53623](https://github.com/advisories/GHSA-6qjf-g333-pv38) | 
 | Adobe Acrobat Reader | Use After Free (CWE-416) | Arbitrary code execution | Important | 5.5 | CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H | [CVE-2025-43577](https://helpx.adobe.com/security/products/acrobat/apsb25-57.html) | 
 | WordPress Plugin | XSS (CWE-79) | Reflected Cross-Site Scripting | Medium | 6.1 | CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N | [CVE-2024-13334](https://www.cve.org/CVERecord?id=CVE-2024-13334) |
 | WordPress Plugin | Missing Authorization (CWE-862) | Information Exposure | Medium | 5.3 | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N | [CVE-2024-10813](https://www.cve.org/CVERecord?id=CVE-2024-10813) |
